@@ -27,7 +27,7 @@ process_template "verify-artifacts" {
     }
 
     parameter "Template.Verify.WorkerPool" {
-        value = "WorkerPools-24"
+        value = "WorkerPools-25"
     }
 
     parameter "Template.Verify.ExecutionContainerFeed" {
