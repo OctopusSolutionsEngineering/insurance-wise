@@ -15,7 +15,7 @@ step "check-for-missing-environment-variable-values" {
 process_template "verify-artifacts" {
     name = "Verify Artifacts"
     process_template_slug = "deploy-process-verify-build-artifacts"
-    version_mask = "8.X"
+    version_mask = "9.X"
 
     package_parameter "Template.SBOM.Artifact" {
         feed = "octopus-server-built-in"
