@@ -1,8 +1,4 @@
 variable "Project.Deployment.Replicas" {
-    value "4" {
-        environment = ["production"]
-    }
-
     value "2" {
         environment = ["development", "homologation"]
     }
@@ -10,6 +6,10 @@ variable "Project.Deployment.Replicas" {
     value "1" {
         description = ""
         environment = ["pull-requests"]
+    }
+
+    value "5" {
+        environment = ["production"]
     }
 }
 
