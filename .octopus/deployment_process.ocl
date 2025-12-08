@@ -1,17 +1,3 @@
-step "check-for-missing-environment-variable-values" {
-    name = "Check for missing Environment variable values"
-
-    action {
-        excluded_environments = ["pull-requests"]
-        properties = {
-            CheckParameters.Octopus.ApiKey = "#{Shared.Octopus.ApiKey}"
-            Octopus.Action.Template.Id = "ActionTemplates-41"
-            Octopus.Action.Template.Version = "2"
-        }
-        worker_pool = "hosted-ubuntu"
-    }
-}
-
 process_template "verify-artifacts" {
     name = "Verify Artifacts"
     process_template_slug = "deploy-process-verify-build-artifacts"
@@ -40,6 +26,20 @@ process_template "verify-artifacts" {
 
     parameter "Template.Environments.Ephemeral" {
         value = "Environments-61"
+    }
+}
+
+step "check-for-missing-environment-variable-values" {
+    name = "Check for missing Environment variable values"
+
+    action {
+        excluded_environments = ["pull-requests"]
+        properties = {
+            CheckParameters.Octopus.ApiKey = "#{Shared.Octopus.ApiKey}"
+            Octopus.Action.Template.Id = "ActionTemplates-41"
+            Octopus.Action.Template.Version = "2"
+        }
+        worker_pool = "hosted-ubuntu"
     }
 }
 
